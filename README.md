@@ -1,8 +1,10 @@
 # Welcome to Memorice
 
 Memorice is a simple version of the classic game.\
-It's developed using React and styled with [styled-components](https://styled-components.com/).
+It's developed using React and styled with [styled-components]
+(https://styled-components.com/).\
 
+The pictures used are from [Lorem Picsum](https://picsum.photos/).
 
 ### Available Scripts
 
