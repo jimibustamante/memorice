@@ -5,7 +5,7 @@ const App = () => {
   return (
   <GameContextProvider>
     <div className="memo-game">
-      <Board cardCount={18} theme='default' />
+      <Board cardCount={24} theme='default' />
     </div>
   </GameContextProvider>
   );
