@@ -70,4 +70,7 @@ export const Score = styled.div`
   height: auto;
   font-size: 2rem;
   color: white;
+  span {
+    text-transform: capitalize;
+  }
 `
