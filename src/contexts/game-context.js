@@ -29,10 +29,6 @@ export const GameContextProvider = ({ children }) => {
         return { ...state, flippedList: [] }
       case 'MATCH':
         list = Object.assign([], state.matchedCardId)
-        // let newFlipopedList = Object.assign([], state.flippedList);
-        // newFlipopedList = newFlipopedList.filter((card) => {
-        //   return !action.payload.includes(card.id);
-        // });
         list = list.concat(action.payload)
         return { ...state, matchedCardId: list }
       case 'LOCK_UI':
@@ -41,7 +37,7 @@ export const GameContextProvider = ({ children }) => {
         return { ...state, uiLocked: false }
       case 'MOVE':
         return { ...state, moves: state.moves + 1 }
-      case 'RESET':
+      case 'RESET_GAME':
         return { ...initialState }
       case 'START_GAME':
         return { ...state, gameStarted: true }
@@ -49,6 +45,8 @@ export const GameContextProvider = ({ children }) => {
         return { ...state, gameOver: true }
       case 'SET_DIFFICULTY':
         return { ...state, difficulty: action.payload }
+      case 'SET_CARDS_COUNT':
+        return { ...state, cardsCount: action.payload }
       default:
         throw new Error('Unexpected action: ' + action.type)
     }

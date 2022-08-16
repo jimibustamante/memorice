@@ -7,8 +7,7 @@ export default function SetupGame() {
   const { difficulty } = gameState
 
   const onChangeValue = (e) => {
-    const { name, value } = e.target
-    console.log(name, value)
+    const { value } = e.target
     dispatch({ type: 'SET_DIFFICULTY', payload: value })
   }
 
@@ -24,7 +23,7 @@ export default function SetupGame() {
         </div>
         <div className='setup-game-body'>
           <DifficultySelect className='setup-game-body-header'>
-            <h2>Difficult</h2>
+            <h2>Choose difficulty</h2>
             <div className='radio-container' onChange={onChangeValue}>
               <label>
                 <input

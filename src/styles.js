@@ -15,10 +15,9 @@ export const Button = styled.button`
   padding: 15px 40px;
   border-radius: 2px;
   margin-top: 2rem;
-  cursor: pointer
-  button:hover {
-    color: ${secondaryColor};
-    background-color: #ffffff;
+  cursor: pointer;
+  &:hover {
+    opacity: 0.8;
   }
 `
 export const GameWrapper = styled.div`
@@ -27,6 +26,7 @@ export const GameWrapper = styled.div`
   align-items: center;
   justify-content: center;
   height: auto;
+  min-height: calc(100vh - ${containerPadding});
   width: 100%;
   box-sizing: border-box;
   background-color: ${mainColor};
@@ -141,5 +141,38 @@ export const DifficultySelect = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+  }
+`
+
+export const Modal = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  .container {
+    background: ${secondaryColor};
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    min-width: 500px;
+    height: auto;
+    border-radius: 10px;
+    border: solid 1px ${thirdColor};
+    padding-bottom: 2rem;
+    @media (max-width: 768px) {
+      width: calc(90% - 1rem);
+    }
+    h2 {
+      margin: 0;
+      margin-bottom: 1rem;
+    }
   }
 `

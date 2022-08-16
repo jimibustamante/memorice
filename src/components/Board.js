@@ -28,6 +28,7 @@ const Board = () => {
 
   const fetchImages = async () => {
     const pics = await getRandomPic(cardCount() / 2)
+    dispatch({ type: 'SET_CARDS_COUNT', payload: cardCount() })
     setPictures(pics)
   }
 
@@ -61,7 +62,7 @@ const Board = () => {
         }, 1500)
       }
     }
-  }, [flippedList])
+  }, [flippedList, dispatch])
 
   useEffect(() => {
     if (!pictures || pictures?.length < 1) return
@@ -75,8 +76,6 @@ const Board = () => {
     cardList.sort(() => Math.random() - 0.5)
     setCards(cardList)
   }, [pictures, setCards])
-
-  console.log({ flippedList })
 
   return (
     <Container>
