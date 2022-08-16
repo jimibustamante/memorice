@@ -1,11 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Baloo+Chettan+2:wght@400;500;600;700;800&display=swap');
 body {
   margin: 0;
-  padding: 10px 40px;
+  padding: 10px 1.5rem;
   background-color: #845ec2;
+  box-sizing: border-box;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  @media (max-width: 768px) {
+    padding: 10px 0.5rem;
+  }
 }

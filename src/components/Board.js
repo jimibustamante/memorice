@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useCallback } from 'react'
 import { useGameContext } from '../contexts/game-context'
 import { Board as BoardStyle, BoardContainer as Container } from '../styles'
 import Card from './Card'
@@ -6,15 +6,28 @@ import Score from './Score'
 import CardModel from '../models/CardModel'
 import { getRandomPic } from '../api/picturesApi'
 
-const Board = ({ cardCount }) => {
+const Board = () => {
   const [cards, setCards] = useState([])
   const [pictures, setPictures] = useState([])
   const [flippedCards, setFlippedCards] = useState([])
   const [gameState, dispatch] = useGameContext()
-  const { flippedList } = gameState
+  const { flippedList, difficulty } = gameState
+
+  const cardCount = useCallback(() => {
+    switch (difficulty) {
+      case 'easy':
+        return 12
+      case 'regular':
+        return 24
+      case 'hell':
+        return 36
+      default:
+        return 24
+    }
+  }, [difficulty])
 
   const fetchImages = async () => {
-    const pics = await getRandomPic(cardCount / 2)
+    const pics = await getRandomPic(cardCount() / 2)
     setPictures(pics)
   }
 

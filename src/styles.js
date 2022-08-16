@@ -5,11 +5,45 @@ const secondaryColor = '#ffc75f'
 const thirdColor = '#f9f871'
 const fourthColor = '#ff5e78'
 
+const containerPadding = '20px'
+
+export const Button = styled.button`
+  color: #ffffff;
+  background-color: ${fourthColor};
+  font-size: 19px;
+  border: 1px solid ${fourthColor};
+  padding: 15px 40px;
+  border-radius: 2px;
+  margin-top: 2rem;
+  cursor: pointer
+  button:hover {
+    color: ${secondaryColor};
+    background-color: #ffffff;
+  }
+`
+export const GameWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: ${mainColor};
+  color: ${fourthColor};
+  font-family: 'Baloo Chettan 2', cursive;
+  font-size: 1.5rem;
+  font-weight: 300;
+  letter-spacing: 0.1rem;
+  text-align: center;
+`
+
 export const BoardContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: calc(100% - ${containerPadding});
 `
 
 export const Board = styled.div`
@@ -72,5 +106,40 @@ export const Score = styled.div`
   color: white;
   span {
     text-transform: capitalize;
+  }
+`
+
+export const Setup = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  @media (max-width: 768px) {
+    width: calc(90% - 1rem);
+  }
+  height: auto;
+  border-radius: 10px;
+  border: solid 1px ${thirdColor};
+`
+
+export const DifficultySelect = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  margin-bottom: 2rem;
+  color: ${secondaryColor};
+  h2 {
+    margin: 0;
+    margin-bottom: 1rem;
+  }
+  .radio-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
   }
 `
